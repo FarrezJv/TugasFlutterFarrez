@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ppkd_b_3/tugas1flutter/start.dart';
-import 'package:ppkd_b_3/tugas2flutter/tugas_dua.dart';
+import 'package:ppkd_b_3/tugas3-4flutter/tugas3.dart';
+import 'package:ppkd_b_3/tugas3-4flutter/tugas4.dart';
 
 
 void main() {
@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   // This widget is the root of your application.
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: TestWidget(),
+      home: Tugas4()
     );
   }
 }

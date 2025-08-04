@@ -6,7 +6,10 @@ class TestWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("PROFIL LENGKAP", style: TextStyle(fontStyle: FontStyle.italic, fontWeight: FontWeight.bold),),
+      appBar: AppBar(title: Text("PROFIL LENGKAP", 
+      style: TextStyle(
+        fontStyle: FontStyle.italic, 
+        fontWeight: FontWeight.bold),),
       backgroundColor:  Colors.lightGreenAccent
       ),
       body: Column(
@@ -20,7 +23,8 @@ class TestWidget extends StatelessWidget {
                     margin: EdgeInsets.only(top: 20),
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      image: DecorationImage(image: AssetImage("assets/images/kanan.jfif"),
+                      image: DecorationImage(
+                        image: AssetImage("assets/images/kanan.jfif"),
                       fit: BoxFit.cover)
                     )
                   ),
@@ -31,7 +35,8 @@ class TestWidget extends StatelessWidget {
                     margin: EdgeInsets.only(top: 20),
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      image: DecorationImage(image: AssetImage("assets/images/kiri.jfif"),
+                      image: DecorationImage(
+                        image: AssetImage("assets/images/kiri.jfif"),
                       fit: BoxFit.cover)
                     )
                   ),
@@ -134,7 +139,7 @@ class TestWidget extends StatelessWidget {
                           child: Center(
                           child: Text ("Postingan", 
                           style: TextStyle(
-                          color: Colors.white,fontWeight: FontWeight.bold),
+                          color: Colors.white,fontWeight:    FontWeight.bold),
                           )
                           ),
                           ),
@@ -146,7 +151,8 @@ class TestWidget extends StatelessWidget {
                           decoration: BoxDecoration(
                             color: Colors.orange,
                             borderRadius: BorderRadius.circular(12),
-                            border: Border.all(color: Colors.black, width: 2),
+                            border: Border.all(
+                              color: Colors.black, width: 2),
                             boxShadow: [
                               BoxShadow(
                                 color: Colors.red,
@@ -158,7 +164,8 @@ class TestWidget extends StatelessWidget {
                           Center(
                             child: Text("Followers", 
                             style: TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.bold),
+                            color: Colors.white, 
+                            fontWeight: FontWeight.bold),
                                             
                             ),
                           ),
@@ -168,28 +175,37 @@ class TestWidget extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 20),
-                Padding(padding: EdgeInsets.symmetric(horizontal: 25),
+                Padding(padding: EdgeInsets.symmetric(
+                  horizontal: 40,  
+                  vertical: 15),
                 child: Text(
-                  """Data diri Farrez Juan Verterry, Berisi Postingan, Follower, 
-                  alamat gmail dan nomor telepon"""
+                  "Data diri Farrez Juan Verterry, Berisi Postingan, Follower, alamat gmail dan nomor telepon",
+                  style: TextStyle(
+                    fontFamily: "Bitcount")
                 ),
                 ),
                 SizedBox(height: 20),
-                Container(
-                  height: 30,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    color: Colors.purpleAccent,
-                    border: Border.all(width: 3),
-                    borderRadius: BorderRadius.circular(30),
-                    boxShadow: [
-                      BoxShadow(blurRadius: 10, color: Colors.red)
-                    ]
-                  ),
-                  child: Center(
-                    child: Text("Akhir Profil", style: TextStyle(fontWeight: FontWeight.bold))
+                Spacer(),
+                    Container(
+                      height: 30,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        color: Colors.purpleAccent,
+                        border: Border.all(width: 3),
+                        // borderRadius: BorderRadius.circular(30),
+                        boxShadow: [
+                          BoxShadow(blurRadius: 10, 
+                          color: Colors.red)
+                        ]
+                      ),
+                      child: Center(
+                        child: Text("Akhir Profil", 
+                        style: TextStyle(
+                          fontFamily: "Bitcount", 
+                          fontStyle: FontStyle.italic,
+                          fontWeight: FontWeight.bold))
+                        ),
                     ),
-                )
             ],
           ),
       );
