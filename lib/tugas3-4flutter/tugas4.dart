@@ -14,7 +14,7 @@ class Tugas4 extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 30),
             child: Container(
-              color: const Color.fromARGB(255, 255, 232, 164),
+               color: const Color.fromARGB(255, 255, 232, 164),
               child: TextField(
                 autocorrect: true,
                 autofocus: true,
@@ -29,7 +29,7 @@ class Tugas4 extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 5),
+          SizedBox(height: 10),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 30),
             child: Container(
@@ -52,6 +52,7 @@ class Tugas4 extends StatelessWidget {
             Padding(
             padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 30),
             child: Container(
+
               color: const Color.fromARGB(255, 255, 232, 164),
               child: TextField(
                 autocorrect: true,
@@ -85,6 +86,7 @@ class Tugas4 extends StatelessWidget {
                   labelText: ("Deskripsi"),
                 ),
               ),
+              
             ),
           ),
           Padding(
