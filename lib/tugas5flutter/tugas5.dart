@@ -19,7 +19,7 @@ class _Tugas5State extends State<Tugas5> {
       appBar: AppBar(title: Text("BUTTON"), backgroundColor: Colors.blue),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          print("Nambah berapa porsi $counter");
+          Text("Nambah berapa porsi $counter");
           setState(() {
             counter++;
             //  print("Nambah berapa porsi $counter");
@@ -28,7 +28,7 @@ class _Tugas5State extends State<Tugas5> {
         },
         child: Icon(Icons.person_add),
       ),
-    
+
       body: Column(
         children: [
           Padding(
@@ -97,16 +97,16 @@ class _Tugas5State extends State<Tugas5> {
                 height: 75,
                 alignment: Alignment.center,
                 // child: Image.asset("assets/images/kanan.jfif"),
-                child: 
-                showBoxtext
-                ? Text("INKWELL", style: TextStyle(
-                  fontWeight: FontWeight.bold
-                ),)
-                : SizedBox.shrink()   
+                child: showBoxtext
+                    ? Text(
+                        "INKWELLL",
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      )
+                    : SizedBox.shrink(),
               ),
             ),
           ),
-          SizedBox(height: 20), 
+          SizedBox(height: 20),
           GestureDetector(
             onTap: () {
               print("Ditekan sekali");
