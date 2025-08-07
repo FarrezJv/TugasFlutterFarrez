@@ -39,7 +39,11 @@ class _Tugas6State extends State<Tugas6> {
                 onPressed: () {},
                 child: Text(
                   "Sign in to your account",
-                  style: TextStyle(fontSize: 14, color: Colors.grey),
+                  style: TextStyle(
+                    fontSize: 14,
+                    color: Colors.grey,
+                    fontWeight: FontWeight.w400,
+                  ),
                 ),
               ),
             ),
@@ -111,6 +115,9 @@ class _Tugas6State extends State<Tugas6> {
                       if (value == null || value.isEmpty) {
                         return "Password Tidak Boleh Kosong";
                       }
+                      // if (!value.contains("<8")) {
+                      //   return "Password error";
+                      // }
                       return null;
                     },
                   ),
@@ -225,10 +232,20 @@ class _Tugas6State extends State<Tugas6> {
               ),
             ),
             SizedBox(height: 20),
-            Center(
-              child: Text(
-                "Or Sign In With",
-                style: TextStyle(fontSize: 14, color: Colors.grey),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24),
+              child: Row(
+                children: [
+                  Expanded(child: Divider(color: Colors.grey, thickness: 1)),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    child: Text(
+                      "Or Sign In With",
+                      style: TextStyle(fontSize: 14, color: Colors.grey),
+                    ),
+                  ),
+                  Expanded(child: Divider(color: Colors.grey, thickness: 1)),
+                ],
               ),
             ),
             SizedBox(height: 20),

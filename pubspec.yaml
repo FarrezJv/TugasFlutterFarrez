@@ -55,7 +55,7 @@ flutter:
   uses-material-design: true
 
   assets:
-    # - assets/fonts/
+    - assets/fonts/gilroy-bold/
     - assets/images/
   #   - images/a_dot_ham.jpeg
 
@@ -70,14 +70,24 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Bitcount
-  #     fonts:
-  #       - asset: assets/fonts/BitcountPropDouble_Cursive-Bold.ttf
-  #       #   weight: 400
-  #       - asset: assets/fonts/Bitcont/BitcountPropDouble_Cursive-Regular.ttf
-        # - asset: fonts/Schyler-Italic.ttf
-        #   style: italic
+  fonts:
+    # - family: Bitcount
+    #   fonts:
+    #     - asset: assets/fonts/BitcountPropDouble_Cursive-Bold.ttf
+    #       weight: 400
+    #     - asset: assets/fonts/Bitcont/BitcountPropDouble_Cursive-Regular.ttf
+    #       weight: 400
+    - family: Gilroy
+      fonts:
+        - asset: assets/fonts/gilroy-bold/Gilroy-Regular.ttf
+        - asset: assets/fonts/gilroy-bold/Gilroy-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/gilroy-bold/Gilroy-Heavy.ttf
+          weight: 800
+        - asset: assets/fonts/gilroy-bold/Gilroy-Light.ttf
+          weight: 400
+        - asset: assets/fonts/gilroy-bold/Gilroy-Medium.ttf
+          weight: 500
     # - family: Trajan Pro
     #   fonts:
     #     - asset: fonts/TrajanPro.ttf
