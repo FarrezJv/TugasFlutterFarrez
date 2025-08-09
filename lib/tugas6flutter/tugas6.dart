@@ -1,18 +1,33 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:ppkd_b_3/extension/navigation.dart';
+import 'package:ppkd_b_3/tugas7flutter/tugas7flutter.dart';
 
 class Tugas6 extends StatefulWidget {
   const Tugas6({super.key});
+  static const id = "/tugas6";
 
   @override
   State<Tugas6> createState() => _Tugas6State();
 }
 
 class _Tugas6State extends State<Tugas6> {
+  // int _selectedIndexDrawer = 0;
+  // static const List<Widget> _widgetOptions = <Widget>[
+  //   // StartWidget(appBar: false),
+  //   Tugas7flutter(),
+  //   checkboxx(),
+  // ];
+  // void onItemTap(int index) {
+  //   setState(() {
+  //     _selectedIndexDrawer = index;
+  //   });
+  //   context.pop();
+  // }
+
   bool _obscurePassword = true;
   final _formKey = GlobalKey<FormState>();
 
-  // final TapGestureRecognizer _tapGestureRecognizer = TapGestureRecognizer();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +44,11 @@ class _Tugas6State extends State<Tugas6> {
               padding: const EdgeInsets.only(top: 30, left: 24),
               child: Text(
                 "Welcome Back",
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: "Gilroy",
+                ),
               ),
             ),
             SizedBox(height: 5),
@@ -60,8 +79,6 @@ class _Tugas6State extends State<Tugas6> {
                 Padding(
                   padding: const EdgeInsets.all(20),
                   child: TextFormField(
-                    // autocorrect: true,
-                    // autofocus: true,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(50),
@@ -89,8 +106,6 @@ class _Tugas6State extends State<Tugas6> {
                 Padding(
                   padding: const EdgeInsets.only(left: 20, right: 20, top: 10),
                   child: TextFormField(
-                    // autocorrect: true,
-                    // autofocus: true,
                     obscureText: _obscurePassword,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(
@@ -115,23 +130,10 @@ class _Tugas6State extends State<Tugas6> {
                       if (value == null || value.isEmpty) {
                         return "Password Tidak Boleh Kosong";
                       }
-                      // if (!value.contains("<8")) {
-                      //   return "Password error";
-                      // }
                       return null;
                     },
                   ),
                 ),
-                // ElevatedButton(
-                //   onPressed: () {
-                //     if (_formKey.currentState!.validate()) {
-                //       ScaffoldMessenger.of(context).showSnackBar(
-                //         const SnackBar(content: Text("Login Sukses")),
-                //       );
-                //     }
-                //   },
-                //   child: Text("Submit"),
-                // ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
@@ -153,7 +155,6 @@ class _Tugas6State extends State<Tugas6> {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               width: double.infinity,
-              height: 56,
               child: ElevatedButton(
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
@@ -181,21 +182,33 @@ class _Tugas6State extends State<Tugas6> {
                             TextButton(
                               child: Text("Lanjutkan"),
                               onPressed: () {
-                                Navigator.of(context).pop();
+                                context.pushNamed(Tugas7flutter.id);
+
+                                // Navigator.pushNamed(context, '/Tugas5');
+                                // child: Text("Kembali ke Halaman Utama"),
+                                // Navigator.pop(
+                                //   context,
+                                //   MaterialPageRoute(
+                                //     builder: (context) => Tugastes(),
+                                //   ),
+                                // );
                               },
                             ),
+                            // ElevatedButton(
+                            //   onPressed: () {
+                            //     // Navigator.pushAndRemoveUntil(context, '/Tugastes');
+                            //   },
+                            //   child: const Text('AYO KE TUGAS TEST'),
+                            // ),
                           ],
                         );
                       },
                     );
-                    // ScaffoldMessenger.of(context).showSnackBar(
-                    //   const SnackBar(content: Text("Login Sukses")),
-                    // );
                   }
                 },
                 style: ButtonStyle(
                   backgroundColor: WidgetStateProperty.all<Color>(
-                    Color(0xFF4C53A5), // Ganti dengan warna yang diinginkan
+                    Color(0xFF4C53A5),
                   ),
                 ),
                 child: Text(

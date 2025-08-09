@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:intl/date_symbol_data_local.dart';
 import 'package:ppkd_b_3/tugas6flutter/tugas6.dart';
+import 'package:ppkd_b_3/tugas7flutter/tugas7flutter.dart';
 
 void main() {
+  initializeDateFormatting("id_ID");
   runApp(const MyApp());
 }
 
@@ -9,15 +12,13 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   // This widget is the root of your application.
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        fontFamily: "Gilroy",
         // This is the theme of your application.
-        //
         // TRY THIS: Try running your application with "flutter run". You'll see
         // the application has a purple toolbar. Then, without quitting the app,
         // try changing the seedColor in the colorScheme below to Colors.green
@@ -31,9 +32,25 @@ class MyApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color.fromARGB(255, 3, 3, 3),
+        ),
       ),
-      home: Tugas6(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => Tugas6(),
+        // '/Tugastes': (context) => Tugastes(),
+        Tugas7flutter.id: (context) => Tugas7flutter(),
+      },
+      // home: Tugas7flutter(),
     );
+    // Navigator.pushNamed(context, '/Tugas6');
+    // return MaterialApp(
+    //   initialRoute: '/',
+    //   routes: {
+    //     '/': (context) => Tugas6(),
+    //     '/Tugastes': (context) => Tugastes(),
+    //   },
+    // );
   }
 }
