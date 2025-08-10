@@ -39,6 +39,12 @@ class _checkboxxState extends State<checkboxx> {
                   ? "Lanjutkan pendaftaran diperbolehkan"
                   : "Anda belum bisa melanjutkan",
             ),
+            SizedBox(height: 10),
+            Image.asset(
+              isCheck ? "assets/images/yess.gif" : "assets/images/noo.gif",
+              width: 300,
+              height: 300,
+            ),
           ],
         ),
       ),

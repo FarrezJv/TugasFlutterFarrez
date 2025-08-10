@@ -27,7 +27,9 @@ class _Switch1State extends State<Switch1> {
                   ),
                 ),
                 Switch(
-                  activeColor: Colors.blue,
+                  activeThumbImage: AssetImage("assets/images/true2.webp"),
+                  inactiveThumbImage: AssetImage("assets/images/false1.webp"),
+                  activeColor: Colors.greenAccent,
                   value: isDarkMode,
                   onChanged: (value) {
                     setState(() {
@@ -38,7 +40,7 @@ class _Switch1State extends State<Switch1> {
                 Text(
                   isDarkMode == true ? "Hidup" : "Tidak Hidup",
                   style: TextStyle(
-                    color: isDarkMode == true ? Colors.white : Colors.black,
+                    color: isDarkMode == true ? Colors.white : Colors.grey,
                   ),
                 ),
               ],

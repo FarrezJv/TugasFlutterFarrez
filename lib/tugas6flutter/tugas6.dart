@@ -1,7 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:ppkd_b_3/extension/navigation.dart';
-import 'package:ppkd_b_3/tugas7flutter/tugas7flutter.dart';
+import 'package:ppkd_b_3/tugas8flutter/tugas8.dart';
 
 class Tugas6 extends StatefulWidget {
   const Tugas6({super.key});
@@ -182,7 +182,7 @@ class _Tugas6State extends State<Tugas6> {
                             TextButton(
                               child: Text("Lanjutkan"),
                               onPressed: () {
-                                context.pushNamed(Tugas7flutter.id);
+                                context.pushNamed(Tugas8.id);
 
                                 // Navigator.pushNamed(context, '/Tugas5');
                                 // child: Text("Kembali ke Halaman Utama"),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:ppkd_b_3/tugas6flutter/tugas6.dart';
-import 'package:ppkd_b_3/tugas7flutter/tugas7flutter.dart';
+import 'package:ppkd_b_3/tugas8flutter/tugas8.dart';
 
 void main() {
   initializeDateFormatting("id_ID");
@@ -40,9 +40,10 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => Tugas6(),
         // '/Tugastes': (context) => Tugastes(),
-        Tugas7flutter.id: (context) => Tugas7flutter(),
+        // Tugas7flutter.id: (context) => Tugas7flutter(),
+        Tugas8.id: (context) => Tugas8(),
       },
-      // home: Tugas7flutter(),
+      // home: TentangAplikasi(),
     );
     // Navigator.pushNamed(context, '/Tugas6');
     // return MaterialApp(
