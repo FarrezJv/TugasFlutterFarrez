@@ -24,6 +24,7 @@ class _Tugas7flutterState extends State<Tugas7flutter> {
     Dropdown1(),
     datepicker1(),
     timepicker1(),
+    // TentangAplikasi(),
     // StartWidget(appBar: false),
     // Day6(),
     // InputWidget(),

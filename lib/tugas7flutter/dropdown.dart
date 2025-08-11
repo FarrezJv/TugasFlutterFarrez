@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ppkd_b_3/tugas7flutter/tugas7flutter.dart';
 
 class Dropdown1 extends StatefulWidget {
   const Dropdown1({super.key});
@@ -12,6 +13,7 @@ class _Dropdown1State extends State<Dropdown1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: const Tugas7flutter(),
       body: Center(
         child: Column(
           children: [

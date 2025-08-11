@@ -15,9 +15,12 @@ class _checkboxxState extends State<checkboxx> {
       body: Center(
         child: Column(
           children: [
-            Text(
-              "Saya menyetujui semua persyaratan yang berlaku :",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Text(
+                "Saya menyetujui semua persyaratan yang berlaku :",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+              ),
             ),
             Checkbox(
               // fillColor: WidgetStatePropertyAll(Colors.red),
