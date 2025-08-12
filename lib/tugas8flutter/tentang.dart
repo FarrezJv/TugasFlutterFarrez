@@ -16,7 +16,7 @@ class TentangAplikasi extends StatelessWidget {
         backgroundColor: Colors.redAccent,
       ),
       drawer: const Tugas7flutter(),
-      body:
+      body: 
           // Padding(
           //   padding: const EdgeInsets.only(
           //     top: 35,

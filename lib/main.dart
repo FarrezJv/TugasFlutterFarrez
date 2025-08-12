@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
         // Tugas7flutter.id: (context) => Tugas7flutter(),
         Tugas8.id: (context) => Tugas8(),
       },
-      // home: MyApp(),
+      // home: Model12(),
     );
     // Navigator.pushNamed(context, '/Tugas6');
     // return MaterialApp(

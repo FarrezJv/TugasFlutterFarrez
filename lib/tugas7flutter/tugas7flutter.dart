@@ -6,6 +6,9 @@ import 'package:ppkd_b_3/tugas7flutter/checkbox.dart';
 import 'package:ppkd_b_3/tugas7flutter/datepicker.dart';
 import 'package:ppkd_b_3/tugas7flutter/dropdown.dart';
 import 'package:ppkd_b_3/tugas7flutter/timepicker.dart';
+import 'package:ppkd_b_3/tugas9flutter/List1.dart';
+import 'package:ppkd_b_3/tugas9flutter/ListOfMap.dart';
+import 'package:ppkd_b_3/tugas9flutter/model.dart';
 
 class Tugas7flutter extends StatefulWidget {
   const Tugas7flutter({super.key});
@@ -24,6 +27,9 @@ class _Tugas7flutterState extends State<Tugas7flutter> {
     Dropdown1(),
     datepicker1(),
     timepicker1(),
+    List1(),
+    Listofmap(),
+    Model12(),
     // TentangAplikasi(),
     // StartWidget(appBar: false),
     // Day6(),
@@ -92,6 +98,27 @@ class _Tugas7flutterState extends State<Tugas7flutter> {
               title: Text("TimePicker"),
               onTap: () {
                 onItemTap(5);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.list),
+              title: Text("List"),
+              onTap: () {
+                onItemTap(6);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.list_alt),
+              title: Text("List Of Map"),
+              onTap: () {
+                onItemTap(7);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.model_training),
+              title: Text("Models"),
+              onTap: () {
+                onItemTap(8);
               },
             ),
           ],
