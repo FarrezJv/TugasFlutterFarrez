@@ -7,7 +7,7 @@ import 'package:ppkd_b_3/extension/navigation.dart';
 
 class Tugas10 extends StatefulWidget {
   const Tugas10({super.key});
-
+  static const id = "/tugas10flutter";
   @override
   State<Tugas10> createState() => _Tugas10State();
 }

@@ -1,6 +1,9 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:ppkd_b_3/extension/navigation.dart';
+import 'package:ppkd_b_3/tugas11-day_16/preference/shared_preference.dart';
+import 'package:ppkd_b_3/tugas11-day_16/sqflite/db_helper.dart';
+import 'package:ppkd_b_3/tugas11-day_16/views/register.dart';
 import 'package:ppkd_b_3/tugas8flutter/tugas8.dart';
 
 class Tugas6 extends StatefulWidget {
@@ -12,18 +15,33 @@ class Tugas6 extends StatefulWidget {
 }
 
 class _Tugas6State extends State<Tugas6> {
-  // int _selectedIndexDrawer = 0;
-  // static const List<Widget> _widgetOptions = <Widget>[
-  //   // StartWidget(appBar: false),
-  //   Tugas7flutter(),
-  //   checkboxx(),
-  // ];
-  // void onItemTap(int index) {
-  //   setState(() {
-  //     _selectedIndexDrawer = index;
-  //   });
-  //   context.pop();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  bool isVisibility = false;
+  // Widget build(BuildContext context) {
+  //   // return Scaffold(body: Stack(children: [buildBackground(), buildLayer()]));
   // }
+  login() async {
+    final email = emailController.text.trim();
+    final password = passwordController.text.trim();
+    if (email.isEmpty || password.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text("Email dan Password tidak boleh kosong")),
+      );
+      // isLoading = false;
+
+      return;
+    }
+    final userData = await DbHelper.loginUser(email, password);
+    if (userData != null) {
+      PreferenceHandler.saveLogin();
+      context.pushReplacementNamed(Tugas8.id);
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text("Email atau Password salah")),
+      );
+    }
+  }
 
   bool _obscurePassword = true;
   final _formKey = GlobalKey<FormState>();
@@ -158,52 +176,53 @@ class _Tugas6State extends State<Tugas6> {
               child: ElevatedButton(
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
-                    showDialog(
-                      context: context,
-                      builder: (context) {
-                        return AlertDialog(
-                          title: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Text("Login Berhasil"),
-                              Image.asset(
-                                "assets/images/inunaka-akari.gif",
-                                width: 120,
-                                height: 120,
-                              ),
-                            ],
-                          ),
-                          content: Text(
-                            "Selamat datang kembali",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          actions: [
-                            TextButton(
-                              child: Text("Lanjutkan"),
-                              onPressed: () {
-                                context.pushNamed(Tugas8.id);
-
-                                // Navigator.pushNamed(context, '/Tugas5');
-                                // child: Text("Kembali ke Halaman Utama"),
-                                // Navigator.pop(
-                                //   context,
-                                //   MaterialPageRoute(
-                                //     builder: (context) => Tugastes(),
-                                //   ),
-                                // );
-                              },
-                            ),
-                            // ElevatedButton(
-                            //   onPressed: () {
-                            //     // Navigator.pushAndRemoveUntil(context, '/Tugastes');
-                            //   },
-                            //   child: const Text('AYO KE TUGAS TEST'),
-                            // ),
-                          ],
-                        );
-                      },
-                    );
+                    login();
+                    // showDialog(
+                    //   context: context,
+                    //   builder: (context) {
+                    //     return AlertDialog(
+                    //       title: Column(
+                    //         mainAxisSize: MainAxisSize.min,
+                    //         children: [
+                    //           Text("Login Berhasil"),
+                    //           Image.asset(
+                    //             "assets/images/inunaka-akari.gif",
+                    //             width: 120,
+                    //             height: 120,
+                    //           ),
+                    //         ],
+                    //       ),
+                    //       content: Text(
+                    //         "Selamat datang kembali",
+                    //         textAlign: TextAlign.center,
+                    //         style: TextStyle(fontWeight: FontWeight.bold),
+                    //       ),
+                    //       actions: [
+                    //         TextButton(
+                    //           child: Text("Lanjutkan"),
+                    //           onPressed: () {
+                    //             context.pushNamed(Tugas8.id);
+                    //             login();
+                    //             // Navigator.pushNamed(context, '/Tugas5');
+                    //             // child: Text("Kembali ke Halaman Utama"),
+                    //             // Navigator.pop(
+                    //             //   context,
+                    //             //   MaterialPageRoute(
+                    //             //     builder: (context) => Tugastes(),
+                    //             //   ),
+                    //             // );
+                    //           },
+                    //         ),
+                    //         // ElevatedButton(
+                    //         //   onPressed: () {
+                    //         //     // Navigator.pushAndRemoveUntil(context, '/Tugastes');
+                    //         //   },
+                    //         //   child: const Text('AYO KE TUGAS TEST'),
+                    //         // ),
+                    //       ],
+                    //     );
+                    //   },
+                    // );
                   }
                 },
                 style: ButtonStyle(
@@ -347,33 +366,76 @@ class _Tugas6State extends State<Tugas6> {
                 ],
               ),
             ),
-            SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.only(left: 25),
-              child: Text.rich(
-                TextSpan(
-                  text: "don't have an account? ",
-                  style: TextStyle(
-                    color: Colors.grey,
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
-                  ),
-                  children: [
-                    TextSpan(
-                      recognizer: TapGestureRecognizer()
-                        ..onTap = () {
-                          print("Anda akan mulai bergabung");
-                        },
-                      text: "Join Us",
-                      style: TextStyle(
-                        color: Colors.orange,
-                        fontWeight: FontWeight.bold,
-                        decoration: TextDecoration.underline,
-                      ),
-                    ),
-                  ],
+            // SizedBox(height: 20),
+            // Padding(
+            //   padding: const EdgeInsets.only(left: 25),
+            //   child: Text.rich(
+            //     TextSpan(
+            //       text: "don't have an account? ",
+            //       style: TextStyle(
+            //         color: Colors.grey,
+            //         fontSize: 14,
+            //         fontWeight: FontWeight.w400,
+            //       ),
+            //       children: [
+            //         TextSpan(
+            //           // recognizer: TapGestureRecognizer()
+            //           //   ..onTap = () {
+            //           //     print("Anda akan mulai bergabung");
+            //           //   },
+            //           text: "Join Us",
+            //           style: TextStyle(
+            //             color: Colors.orange,
+            //             fontWeight: FontWeight.bold,
+            //             decoration: TextDecoration.underline,
+            //           ),
+            //         ),
+            //       ],
+            //     ),
+            //   ),
+            // ),
+            // TextButton(
+            //   onPressed: () {
+            //     context.push(Tugas10());
+            //     // Navigator.pushReplacement(
+            //     //   context,
+            //     //   MaterialPageRoute(builder: (context) => MeetEmpatA()),
+            //     // );
+            //   },
+            //   child: Text(
+            //     "Sign Up",
+            //     style: TextStyle(
+            //       // color: AppColor.blueButton,
+            //       fontSize: 12,
+            //       fontWeight: FontWeight.bold,
+            //     ),
+            //   ),
+            // ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "Don't have an account?",
+                  // style: TextStyle(fontSize: 12, color: AppColor.gray88),
                 ),
-              ),
+                TextButton(
+                  onPressed: () {
+                    context.push(RegisterScreen());
+                    // Navigator.pushReplacement(
+                    //   context,
+                    //   MaterialPageRoute(builder: (context) => MeetEmpatA()),
+                    // );
+                  },
+                  child: Text(
+                    "Join Us",
+                    style: TextStyle(
+                      color: Colors.orange,
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ],
             ),
           ],
         ),

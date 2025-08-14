@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ppkd_b_3/extension/navigation.dart';
+import 'package:ppkd_b_3/tugas11-day_16/views/user_screen.dart';
 import 'package:ppkd_b_3/tugas7flutter/Beranda.dart';
 import 'package:ppkd_b_3/tugas7flutter/Switch.dart';
 import 'package:ppkd_b_3/tugas7flutter/checkbox.dart';
@@ -30,6 +31,8 @@ class _Tugas7flutterState extends State<Tugas7flutter> {
     List1(),
     Listofmap(),
     Model12(),
+    Day16UserScreen(),
+
     // TentangAplikasi(),
     // StartWidget(appBar: false),
     // Day6(),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/date_symbol_data_local.dart';
+import 'package:ppkd_b_3/tugas11-day_16/views/register.dart';
 import 'package:ppkd_b_3/tugas6flutter/tugas6.dart';
 import 'package:ppkd_b_3/tugas8flutter/tugas8.dart';
 
@@ -39,6 +40,8 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => Tugas6(),
+        // Tugas10.id: (context) => Tugas10(),
+        RegisterScreen.id: (context) => const RegisterScreen(),
         // '/Tugastes': (context) => Tugastes(),
         // Tugas7flutter.id: (context) => Tugas7flutter(),
         Tugas8.id: (context) => Tugas8(),
