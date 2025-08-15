@@ -85,22 +85,114 @@ class _Day16UserScreenState extends State<Day16UserScreen> {
               itemCount: users.length,
               itemBuilder: (BuildContext context, int index) {
                 final dataUserLogin = users[index];
-                return Column(
-                  children: [
-                    Text(dataUserLogin.name),
-                    SizedBox(height: 8),
-                    Text(dataUserLogin.email),
-                    SizedBox(height: 8),
-                    Text(dataUserLogin.password),
-                    SizedBox(height: 8),
-                    Text(dataUserLogin.event),
-                    SizedBox(height: 8),
-                    Text(dataUserLogin.city),
-                  ],
+                return ListTile(
+                  title: Text(dataUserLogin.name),
+                  subtitle: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(dataUserLogin.email),
+                      Text(dataUserLogin.event),
+                      Text(dataUserLogin.city),
+                    ],
+                  ),
+                  trailing: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      IconButton(
+                        onPressed: () {
+                          showDialog(
+                            context: context,
+                            builder: (context) => AlertDialog(
+                              title: Text('Edit Data'),
+                              content: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  TextFormConst(
+                                    controller: nameController
+                                      ..text = dataUserLogin.name,
+                                    hintText: 'Nama',
+                                  ),
+                                  SizedBox(height: 12),
+                                  TextFormConst(
+                                    controller: emailController
+                                      ..text = dataUserLogin.email,
+                                    hintText: 'Email',
+                                  ),
+                                  SizedBox(height: 12),
 
-                  // title: Text(dataUserLogin.name),
-                  // subtitle: Text(dataUserLogin.email,),
+                                  TextFormConst(
+                                    controller: passwordController
+                                      ..text = dataUserLogin.password,
+                                    hintText: 'Password',
+                                  ),
+                                  SizedBox(height: 12),
+
+                                  TextFormConst(
+                                    controller: eventController
+                                      ..text = dataUserLogin.event,
+                                    hintText: 'Event',
+                                  ),
+                                  SizedBox(height: 12),
+
+                                  TextFormConst(
+                                    controller: cityController
+                                      ..text = dataUserLogin.city,
+                                    hintText: 'city',
+                                  ),
+                                ],
+                              ),
+                              actions: [
+                                ElevatedButton(
+                                  onPressed: () {
+                                    final dataUser = User(
+                                      id: dataUserLogin.id!,
+                                      email: emailController.text,
+                                      password: passwordController.text,
+                                      name: nameController.text.trim(),
+                                      city: cityController.text.trim(),
+                                      event: eventController.text.trim(),
+                                    );
+                                    DbHelper.updateUser(dataUser);
+                                    getUser();
+                                    Navigator.pop(context);
+                                  },
+                                  child: Text('Simpan'),
+                                ),
+                                ElevatedButton(
+                                  onPressed: () => Navigator.pop(context),
+                                  child: Text('Batal'),
+                                ),
+                              ],
+                            ),
+                          );
+                        },
+                        icon: Icon(Icons.edit),
+                      ),
+                      IconButton(
+                        onPressed: () {
+                          DbHelper.deleteUser(dataUserLogin.id!);
+                          getUser();
+                        },
+                        icon: Icon(Icons.delete),
+                      ),
+                    ],
+                  ),
                 );
+                // Column(
+                //   children: [
+                //     Text(dataUserLogin.name),
+                //     SizedBox(height: 8),
+                //     Text(dataUserLogin.email),
+                //     SizedBox(height: 8),
+                //     Text(dataUserLogin.password),
+                //     SizedBox(height: 8),
+                //     Text(dataUserLogin.event),
+                //     SizedBox(height: 8),
+                //     Text(dataUserLogin.city),
+
+                //   ],
+
+                // );
               },
             ),
           ],
