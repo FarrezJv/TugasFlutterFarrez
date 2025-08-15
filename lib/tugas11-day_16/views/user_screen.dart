@@ -41,6 +41,8 @@ class _Day16UserScreenState extends State<Day16UserScreen> {
             TextFormConst(hintText: "Nama", controller: nameController),
             TextFormConst(hintText: "Email", controller: emailController),
             TextFormConst(hintText: "Password", controller: passwordController),
+            TextFormConst(hintText: "event", controller: eventController),
+            TextFormConst(hintText: "city", controller: cityController),
             ElevatedButton(
               onPressed: () async {
                 final email = emailController.text.trim();
@@ -83,9 +85,21 @@ class _Day16UserScreenState extends State<Day16UserScreen> {
               itemCount: users.length,
               itemBuilder: (BuildContext context, int index) {
                 final dataUserLogin = users[index];
-                return ListTile(
-                  title: Text(dataUserLogin.name),
-                  subtitle: Text(dataUserLogin.email),
+                return Column(
+                  children: [
+                    Text(dataUserLogin.name),
+                    SizedBox(height: 8),
+                    Text(dataUserLogin.email),
+                    SizedBox(height: 8),
+                    Text(dataUserLogin.password),
+                    SizedBox(height: 8),
+                    Text(dataUserLogin.event),
+                    SizedBox(height: 8),
+                    Text(dataUserLogin.city),
+                  ],
+
+                  // title: Text(dataUserLogin.name),
+                  // subtitle: Text(dataUserLogin.email,),
                 );
               },
             ),

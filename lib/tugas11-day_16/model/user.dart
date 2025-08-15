@@ -20,6 +20,8 @@ class User {
       'email': email,
       'password': password,
       'name': name,
+      'city': city,
+      'event': event,
     };
   }
 

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ppkd_b_3/extension/navigation.dart';
 import 'package:ppkd_b_3/tugas11-day_16/views/user_screen.dart';
+import 'package:ppkd_b_3/tugas11-day_16/widgets/log_out.dart';
 import 'package:ppkd_b_3/tugas7flutter/Beranda.dart';
 import 'package:ppkd_b_3/tugas7flutter/Switch.dart';
 import 'package:ppkd_b_3/tugas7flutter/checkbox.dart';
@@ -32,6 +33,7 @@ class _Tugas7flutterState extends State<Tugas7flutter> {
     Listofmap(),
     Model12(),
     Day16UserScreen(),
+    LogOutButton(),
 
     // TentangAplikasi(),
     // StartWidget(appBar: false),
@@ -122,6 +124,20 @@ class _Tugas7flutterState extends State<Tugas7flutter> {
               title: Text("Models"),
               onTap: () {
                 onItemTap(8);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.app_registration),
+              title: Text("User Screen"),
+              onTap: () {
+                onItemTap(9);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.logout),
+              title: Text("Log Out"),
+              onTap: () {
+                onItemTap(10);
               },
             ),
           ],

@@ -13,7 +13,14 @@ class DbHelper {
           'CREATE TABLE users(id INTEGER PRIMARY KEY, email TEXT, password TEXT, name TEXT, event TEXT, city TEXT)',
         );
       },
-      version: 1,
+      version: 2,
+      // onUpgrade: (db, oldVersion, newVersion) {
+      //   if (oldVersion < 2) {
+      //     db.execute(
+      //       'CREATE TABLE users(id INTEGER PRIMARY KEY, email TEXT, password TEXT, name TEXT, event TEXT, city TEXT)',
+      //     );
+      //   }
+      // },
     );
   }
 

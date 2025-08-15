@@ -291,7 +291,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   Widget buildTitle(String text) {
     return Row(
       children: [
-        // Text(text, style: TextStyle(fontSize: 12, color: AppColor.gray88)),
+        Text(text, style: TextStyle(fontSize: 12, color: Colors.grey)),
       ],
     );
   }

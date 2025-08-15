@@ -44,7 +44,7 @@ class _Tugas6State extends State<Tugas6> {
   }
 
   bool _obscurePassword = true;
-  final _formKey = GlobalKey<FormState>();
+  // final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +54,7 @@ class _Tugas6State extends State<Tugas6> {
         title: Text("Login", style: TextStyle(fontWeight: FontWeight.bold)),
       ),
       body: Form(
-        key: _formKey,
+        // key: _formKey,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -97,6 +97,7 @@ class _Tugas6State extends State<Tugas6> {
                 Padding(
                   padding: const EdgeInsets.all(20),
                   child: TextFormField(
+                    controller: emailController,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(50),
@@ -124,6 +125,7 @@ class _Tugas6State extends State<Tugas6> {
                 Padding(
                   padding: const EdgeInsets.only(left: 20, right: 20, top: 10),
                   child: TextFormField(
+                    controller: passwordController,
                     obscureText: _obscurePassword,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(
@@ -175,55 +177,55 @@ class _Tugas6State extends State<Tugas6> {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {
-                  if (_formKey.currentState!.validate()) {
-                    login();
-                    // showDialog(
-                    //   context: context,
-                    //   builder: (context) {
-                    //     return AlertDialog(
-                    //       title: Column(
-                    //         mainAxisSize: MainAxisSize.min,
-                    //         children: [
-                    //           Text("Login Berhasil"),
-                    //           Image.asset(
-                    //             "assets/images/inunaka-akari.gif",
-                    //             width: 120,
-                    //             height: 120,
-                    //           ),
-                    //         ],
-                    //       ),
-                    //       content: Text(
-                    //         "Selamat datang kembali",
-                    //         textAlign: TextAlign.center,
-                    //         style: TextStyle(fontWeight: FontWeight.bold),
-                    //       ),
-                    //       actions: [
-                    //         TextButton(
-                    //           child: Text("Lanjutkan"),
-                    //           onPressed: () {
-                    //             context.pushNamed(Tugas8.id);
-                    //             login();
-                    //             // Navigator.pushNamed(context, '/Tugas5');
-                    //             // child: Text("Kembali ke Halaman Utama"),
-                    //             // Navigator.pop(
-                    //             //   context,
-                    //             //   MaterialPageRoute(
-                    //             //     builder: (context) => Tugastes(),
-                    //             //   ),
-                    //             // );
-                    //           },
-                    //         ),
-                    //         // ElevatedButton(
-                    //         //   onPressed: () {
-                    //         //     // Navigator.pushAndRemoveUntil(context, '/Tugastes');
-                    //         //   },
-                    //         //   child: const Text('AYO KE TUGAS TEST'),
-                    //         // ),
-                    //       ],
-                    //     );
-                    //   },
-                    // );
-                  }
+                  // if (_formKey.currentState!.validate()) {
+                  login();
+                  // showDialog(
+                  //   context: context,
+                  //   builder: (context) {
+                  //     return AlertDialog(
+                  //       title: Column(
+                  //         mainAxisSize: MainAxisSize.min,
+                  //         children: [
+                  //           Text("Login Berhasil"),
+                  //           Image.asset(
+                  //             "assets/images/inunaka-akari.gif",
+                  //             width: 120,
+                  //             height: 120,
+                  //           ),
+                  //         ],
+                  //       ),
+                  //       content: Text(
+                  //         "Selamat datang kembali",
+                  //         textAlign: TextAlign.center,
+                  //         style: TextStyle(fontWeight: FontWeight.bold),
+                  //       ),
+                  //       actions: [
+                  //         TextButton(
+                  //           child: Text("Lanjutkan"),
+                  //           onPressed: () {
+                  //             context.pushNamed(Tugas8.id);
+                  //             login();
+                  //             // Navigator.pushNamed(context, '/Tugas5');
+                  //             // child: Text("Kembali ke Halaman Utama"),
+                  //             // Navigator.pop(
+                  //             //   context,
+                  //             //   MaterialPageRoute(
+                  //             //     builder: (context) => Tugastes(),
+                  //             //   ),
+                  //             // );
+                  //           },
+                  //         ),
+                  //         // ElevatedButton(
+                  //         //   onPressed: () {
+                  //         //     // Navigator.pushAndRemoveUntil(context, '/Tugastes');
+                  //         //   },
+                  //         //   child: const Text('AYO KE TUGAS TEST'),
+                  //         // ),
+                  //       ],
+                  //     );
+                  //   },
+                  // );
+                  // }
                 },
                 style: ButtonStyle(
                   backgroundColor: WidgetStateProperty.all<Color>(

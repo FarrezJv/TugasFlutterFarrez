@@ -37,16 +37,17 @@ class MyApp extends StatelessWidget {
           seedColor: const Color.fromARGB(255, 3, 3, 3),
         ),
       ),
-      initialRoute: '/',
+      initialRoute: Tugas6.id,
       routes: {
-        '/': (context) => Tugas6(),
+        '/tugas6': (context) => Tugas6(),
+
         // Tugas10.id: (context) => Tugas10(),
         RegisterScreen.id: (context) => const RegisterScreen(),
         // '/Tugastes': (context) => Tugastes(),
         // Tugas7flutter.id: (context) => Tugas7flutter(),
         Tugas8.id: (context) => Tugas8(),
       },
-      // home: Tugas10(),
+      // home: CobaCoba1(),
     );
     // Navigator.pushNamed(context, '/Tugas6');
     // return MaterialApp(
