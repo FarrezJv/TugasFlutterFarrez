@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/date_symbol_data_local.dart';
-import 'package:ppkd_b_3/tugas11-day_16/views/register.dart';
-import 'package:ppkd_b_3/tugas6flutter/tugas6.dart';
-import 'package:ppkd_b_3/tugas8flutter/tugas8.dart';
+import 'package:ppkd_b_3/tugas14_day23/views/get_api.dart';
 
 void main() {
   initializeDateFormatting("id_ID");
@@ -37,17 +35,17 @@ class MyApp extends StatelessWidget {
           seedColor: const Color.fromARGB(255, 3, 3, 3),
         ),
       ),
-      initialRoute: Tugas6.id,
-      routes: {
-        '/tugas6': (context) => Tugas6(),
+      // initialRoute: Tugas6.id,
+      // routes: {
+      //   '/tugas6': (context) => Tugas6(),
 
-        // Tugas10.id: (context) => Tugas10(),
-        RegisterScreen.id: (context) => const RegisterScreen(),
-        // '/Tugastes': (context) => Tugastes(),
-        // Tugas7flutter.id: (context) => Tugas7flutter(),
-        Tugas8.id: (context) => Tugas8(),
-      },
-      // home: CobaCoba1(),
+      //   // Tugas10.id: (context) => Tugas10(),
+      //   RegisterScreen.id: (context) => const RegisterScreen(),
+      //   // '/Tugastes': (context) => Tugastes(),
+      //   // Tugas7flutter.id: (context) => Tugas7flutter(),
+      //   Tugas8.id: (context) => Tugas8(),
+      // },
+      home: Day23GetAPIScreen(),
     );
     // Navigator.pushNamed(context, '/Tugas6');
     // return MaterialApp(
