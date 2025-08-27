@@ -35,6 +35,7 @@ class MyApp extends StatelessWidget {
           seedColor: const Color.fromARGB(255, 3, 3, 3),
         ),
       ),
+
       // initialRoute: Tugas6.id,
       // routes: {
       //   '/tugas6': (context) => Tugas6(),

@@ -34,6 +34,7 @@ class _Tugas7flutterState extends State<Tugas7flutter> {
     Model12(),
     Day16UserScreen(),
     LogOutButton(),
+    // Day23GetAPIScreen(),
 
     // TentangAplikasi(),
     // StartWidget(appBar: false),
@@ -138,6 +139,13 @@ class _Tugas7flutterState extends State<Tugas7flutter> {
               title: Text("Log Out"),
               onTap: () {
                 onItemTap(10);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.logout),
+              title: Text("API"),
+              onTap: () {
+                onItemTap(11);
               },
             ),
           ],
