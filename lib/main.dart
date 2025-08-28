@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/date_symbol_data_local.dart';
-import 'package:ppkd_b_3/tugas14_day23/views/get_api.dart';
+import 'package:ppkd_b_3/Tugas15_day25/view/login.dart';
 
 void main() {
   initializeDateFormatting("id_ID");
@@ -36,17 +36,22 @@ class MyApp extends StatelessWidget {
         ),
       ),
 
-      // initialRoute: Tugas6.id,
+      // initialRoute:login1.id,
       // routes: {
-      //   '/tugas6': (context) => Tugas6(),
+      //   '/login': (context) => login1(),
 
       //   // Tugas10.id: (context) => Tugas10(),
       //   RegisterScreen.id: (context) => const RegisterScreen(),
       //   // '/Tugastes': (context) => Tugastes(),
       //   // Tugas7flutter.id: (context) => Tugas7flutter(),
-      //   Tugas8.id: (context) => Tugas8(),
+      //   // Tugas8.id: (context) => Tugas8(),
       // },
-      home: Day23GetAPIScreen(),
+      // initialRoute: login1.id,
+      // routes: {
+      //   login1.id: (context) => const login1(),
+      //   Dashboard1.id: (context) => const Dashboard1(),
+      // },
+      home: login1(),
     );
     // Navigator.pushNamed(context, '/Tugas6');
     // return MaterialApp(

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class Beranda extends StatefulWidget {
   const Beranda({super.key});
-
+  static const id = "/beranda";
   @override
   State<Beranda> createState() => _BerandaState();
 }

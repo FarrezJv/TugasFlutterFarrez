@@ -1,7 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:ppkd_b_3/extension/navigation.dart';
-import 'package:ppkd_b_3/tugas11-day_16/preference/shared_preference.dart';
+import 'package:ppkd_b_3/preference/shared_preference.dart';
 import 'package:ppkd_b_3/tugas11-day_16/sqflite/db_helper.dart';
 import 'package:ppkd_b_3/tugas11-day_16/views/register.dart';
 import 'package:ppkd_b_3/tugas8flutter/tugas8.dart';
