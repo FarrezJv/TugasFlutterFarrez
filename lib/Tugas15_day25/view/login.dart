@@ -275,7 +275,7 @@ class _login1State extends State<login1> {
     final email = emailController.text.trim();
     final password = passwordController.text.trim();
     // final name = nameController.text.trim();
-    if (email.isEmpty || password.isEmpty || email.isEmpty) {
+    if (email.isEmpty || password.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
           content: Text("Email, Password, dan Nama tidak boleh kosong"),
